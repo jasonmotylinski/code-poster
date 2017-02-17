@@ -1,0 +1,11 @@
+github:
+  api_url: https://api.github.com
+  username: <OPTIONAL>
+  personal_access_token: <OPTIONAL>
+  owner: unitedstates
+  repo: congress-legislators
+  branch: master
+  code_file_regex: '^.*\.(scala|js|py|cs|java)$'
+svg:
+  font_size: 1
+  ratio: 0.6

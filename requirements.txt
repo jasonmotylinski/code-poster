@@ -1,0 +1,4 @@
+pillow==4.0.0
+svgwrite==1.1.10
+requests==2.13.0
+pyyaml=3.12
