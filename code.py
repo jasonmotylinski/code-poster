@@ -36,9 +36,12 @@ def populate_queue():
             r = get(t['url'])
             if 'content' in r.json():
                 content = base64.b64decode(r.json()['content']).replace('\n', ' ')
-                content = re.sub('\s+', ' ', content).strip()
-                for ch in content:
-                    q.put(ch)
+                try:
+                    content = re.sub('\s+', ' ', content).strip().encode("ascii", "ignore")
+                    for ch in content:
+                        q.put(ch)
+                except:
+                    pass
 
 
 def get_char():
