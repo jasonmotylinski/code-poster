@@ -3,6 +3,8 @@ Code Poster generates an SVG image from a source image using text taken from cod
 
 This project is inspired by the Elixir project by Pete Corey. Pete did much of the hard work like determining the optimal image size and how to adjust the image to correct for the font width. Read his post [here](http://www.east5th.co/blog/2017/02/13/build-your-own-code-poster-with-elixir/) and see the elixir code [here](https://github.com/pcorey/elixir_poster).
 
+This version automatically scales the image by a configured ratio so that any image can be used without modification.
+
 ## Setup
 ### Install the Source Code Pro Font
 Download and unzip the [latest release](https://github.com/adobe-fonts/source-code-pro/releases) of the Adobe fonts. 
@@ -59,13 +61,6 @@ svg:
 |font_family| The font to use to generate the SVG|
 |font_size| The size of the font|
 |ratio|The amount of compensation to make with widths because the font is not exactly 1 pixel wide. Adjust with caution|
-
-
-## Creating the Source Image
-Pete Corey's blog post does a great job of explaining how to create a source image to use for the code poster. My process was the following:
-
-1. Create a 389x300 PNG image
-1. Scale ONLY the width of the image by 160%. This will cause the image to stretch. Don't worry, it'll be ok.
 
 
 ## Running

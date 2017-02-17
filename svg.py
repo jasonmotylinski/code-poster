@@ -53,5 +53,5 @@ if __name__ == '__main__':
     (options, args) = parser.parse_args()
     if not options.input or not options.output:
         parser.error('Please provide both input and output parameters. ')
-    
+
     create(options.input, options.output)

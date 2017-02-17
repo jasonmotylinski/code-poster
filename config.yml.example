@@ -5,7 +5,8 @@ github:
   owner: unitedstates
   repo: congress-legislators
   branch: master
-  code_file_regex: '^.*\.(scala|js|py|cs|java)$'
+  code_file_regex: '^.*\.(scala|js|py|cs|java|rb)$'
 svg:
+  font_family: 'Source Code Pro'
   font_size: 1
   ratio: 0.6
