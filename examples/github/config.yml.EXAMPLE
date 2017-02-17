@@ -1,0 +1,12 @@
+github:
+  api_url: https://api.github.com
+  username: <FILL IN>
+  personal_access_token: <FILL IN>
+  owner: github
+  repo: platform-samples
+  branch: master
+  code_file_regex: '^.*\.(scala|js|py|cs|java|rb)$'
+svg:
+  font_family: Source Code Pro
+  font_size: 1
+  ratio: 0.6

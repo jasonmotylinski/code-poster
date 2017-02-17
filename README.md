@@ -75,3 +75,11 @@ Run the following command:
 python svg.py -i logo.png -o code.svg
 ```
 
+## Github Example
+The GitHub example will download a version of the GitHub logo and create an SVG using the code in the [platform-samples](https://github.com/github/platform-samples) repository. 
+
+To run the Github example do the following:
+
+1. Copy `examples/github/config.yml.EXAMPLE` to `config.yml`
+1. Update the `[github]` section with the appropriate username and personal\_access\_token
+1. Run the command `./examples/github/run.sh` 

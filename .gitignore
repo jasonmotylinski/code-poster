@@ -3,3 +3,6 @@ venv
 **/*.pyc
 **/*.ipynb
 config.yml
+
+*.png
+*.svg
