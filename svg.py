@@ -18,7 +18,7 @@ def create(input_image, output_path):
                            width=width,
                            height=height,
                            viewBox='0 0 {0} {1}'.format(width * conf['svg']['ratio'], height),
-                           style='font-family:\'Source Code Pro\';font-weight:900;font-size:{0}'.format(conf['svg']['font_size']))
+                           style='font-family:\'{0}\';font-weight:900;font-size:{1}'.format(conf['svg']['font_family'], conf['svg']['font_size']))
     dwg.attribs['xml:space'] = 'preserve'
 
     for h in range(0, height):
