@@ -1,4 +1,5 @@
 import base64
+
 import os
 import Queue
 import re
@@ -6,6 +7,8 @@ import requests
 import config
 
 from glob import glob
+from log import _log
+
 
 q = Queue.Queue()
 
@@ -53,6 +56,8 @@ def get_content_from_github():
             r = get(t['url'])
             if 'content' in r.json():
                 content.append(base64.b64decode(r.json()['content']))
+
+    _log.debug("get_content_from_github: Length of content: {0}".format(len(content)))
     return content
 
 
@@ -67,6 +72,7 @@ def get_content_from_local():
         with open(f, 'r') as file:
             content.append(file.read())
 
+    _log.debug("get_content_from_local: Length of content: {0}".format(len(content)))
     return content
 
 
@@ -75,10 +81,14 @@ def get_char():
     conf = config.get()
     if q.empty():
         content = None
+        _log.debug("get_char: Getting code from {0}".format(conf["general"]["source"]))
         if(conf["general"]["source"] == "local"):
             content = get_content_from_local()
         else:
             content = get_content_from_github()
         populate_queue(content)
+        _log.debug("get_char: character queue length: {0}".format(q.qsize()))
 
-    return q.get()
+    retval = q.get()
+    q.put_nowait(retval)
+    return retval

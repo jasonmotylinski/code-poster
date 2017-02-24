@@ -4,10 +4,12 @@ import svgwrite
 import util
 from itertools import groupby
 from optparse import OptionParser
+from log import _log
 
 
 def create(input_image, output_path):
     """Create an SVG from the input image."""
+    _log.debug("create: input_image: {0}, output_path: {1}".format(input_image, output_path))
     conf = config.get()
     im = util.get_image(input_image)
     (width, height) = im.size
@@ -16,12 +18,14 @@ def create(input_image, output_path):
     dwg = svgwrite.Drawing(output_path,
                            profile='full',
                            width=width,
+
                            height=height,
                            viewBox='0 0 {0} {1}'.format(width * conf['svg']['ratio'], height),
                            style='font-family:\'{0}\';font-weight:900;font-size:{1}'.format(conf['svg']['font_family'], conf['svg']['font_size']))
     dwg.attribs['xml:space'] = 'preserve'
 
     for h in range(0, height):
+        _log.debug("create: Processing line h: {0} w: {1}".format(h, width))
         colors = []
         for w in range(0, width):
             try:
