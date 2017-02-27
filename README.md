@@ -66,8 +66,7 @@ github:
 |owner|The owner of the repository to use|
 |repo| The name of the repo to use|
 |branch| The branch of code to use | 
-|code\_file\_regex|The regular expression used to determine which files in GitHub to use for the source code. By default the expression scans .scala, .js, .py, .cs, and .java files.
- 
+
 #### SVG
 ```
 svg:
