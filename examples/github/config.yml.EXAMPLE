@@ -1,3 +1,6 @@
+general:
+  source: github
+  code_file_regex: '^.*\.(scala|js|py|cs|java|rb)$'
 github:
   api_url: https://api.github.com
   username: <FILL IN>
@@ -5,7 +8,6 @@ github:
   owner: github
   repo: platform-samples
   branch: master
-  code_file_regex: '^.*\.(scala|js|py|cs|java|rb)$'
 svg:
   font_family: Source Code Pro
   font_size: 1

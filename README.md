@@ -28,6 +28,26 @@ The configuration file defines the options for retrieving the source code from G
 
 **YOU MUST** copy the `config.yml.EXAMPLE` file to `config.yml` before running the application.
 
+#### General
+```
+general:
+  source: <local OR github>
+  code_file_regex: '^.*\.(scala|js|py|cs|java|rb)$'
+```
+| Option | Description |
+|---|---|
+|source|Which source to use for the code, local or github|
+|code\_file\_regex|The regular expression used to determine which files in GitHub to use for the source code. By default the expression scans .scala, .js, .py, .cs, and .java files.
+ 
+#### Local
+```
+local:
+  path: <PATH TO THE LOCAL FILES>
+```
+| Option | Description |
+|---|---|
+|path| The local file path to the code files used to build the image |
+
 #### GitHub
 ```
 github:
@@ -37,7 +57,6 @@ github:
   owner: unitedstates
   repo: congress-legislators
   branch: master
-  code_file_regex: '^.*\.(scala|js|py|cs|java)$'
 ```
 | Option | Description |
 |---|---|

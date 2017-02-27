@@ -1,3 +1,10 @@
+general:
+  source: <local OR github>
+  code_file_regex: '^.*\.(scala|js|py|cs|java|rb)$'
+
+local:
+  path: <PATH TO LOCAL FILES>
+
 github:
   api_url: https://api.github.com
   username: <OPTIONAL>
@@ -5,7 +12,7 @@ github:
   owner: unitedstates
   repo: congress-legislators
   branch: master
-  code_file_regex: '^.*\.(scala|js|py|cs|java|rb)$'
+
 svg:
   font_family: 'Source Code Pro'
   font_size: 1
